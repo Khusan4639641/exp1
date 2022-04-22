@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+
+<div class="content" style = 'padding:10px'>
+  <h1 style='text-align:center;'>Task 2</h1>
+  <hr>
+      <div class="content_top">
+        <div class="row">
+           <div class="col-6">
+             <h2>Users</h2>
+
+            <table>
+             <tr>
+               <th>ID</th>
+               <th>FIO</th>
+               <th>DEPARTMENT</th>
+             </tr>
+             {% for data in users %}
+               <tr>
+                 <td>{{ data.id }}</td>
+                 <td>{{ data.fio }}</td>
+                 <td>{{ data.department }}</td>
+               </tr>
+             {% endfor %}
+
+            </table>
+           </div>
+           <div class="col-6">
+             <h2>Productivity</h2>
+            <table>
+             <tr>
+               <th>ID</th>
+               <th>WORK HOURS</th>
+               <th>USER ID</th>
+             </tr>
+             {% for data in products %}
+               <tr>
+                 <td>{{ data.id }}</td>
+                 <td>{{ data.user_id }}</td>
+                 <td>{{ data.work_hours }}</td>
+               </tr>
+             {% endfor %}
+            </table>
+           </div>
+        </div> <!-- class="row" -->
+        <hr>
+        <div class="row">
+            <div class="col-12">
+              <h2>Results</h2>
+              <table>
+               <tr>
+                 <th>ID</th>
+                 <th>WORK HOURS</th>
+                 <th>USER ID</th>
+               </tr>
+               {% for data in results %}
+                 <tr>
+                   <td>{{ data.id }}</td>
+                   <td>{{ data.name }}</td>
+                   <td>{{ data.sum }}</td>
+                 </tr>
+               {% endfor %}
+               </table>
+            </div>
+        </div>
+      </div> <!-- class="content_top" -->
+</div><!-- class="content" -->
+
+{% endblock %}
